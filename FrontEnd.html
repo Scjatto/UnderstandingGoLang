@@ -1,0 +1,18 @@
+<h1>{{ .Title }}</h1>
+
+<table>
+    <thead>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Change Frequency</th>
+    </thead>
+    <tbody>
+    {{ range $key,$value := .NewsShow }}
+        <tr>
+            <td><center>{{ $key }}</td>
+            <td><center><a href="{{ $value.Locations }}" target="_blank">{{ $value.Locations }}</a></td>
+            <td><center>{{ $value.ChngFreq }}</td>
+        </tr>
+    {{ end }}
+    </tbody>
+</table>
